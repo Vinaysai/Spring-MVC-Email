@@ -2,26 +2,22 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <title>Spring MVC Email Example</title>
+
 <style type="text/css">
-#emailFormDiv {
+#errorMessage {
 	text-align: center;
-	padding-top: 16px;
-}
-
-#emailFormPage {
-	text-decoration: none;
-	text-align: center;
-	cursor: pointer;
-}
-
-#successMessage {
-	text-align: center;
-	color: green;
 	font-size: 25px;
 	padding-top: 17px;
+}
+
+#errorMessage span {
+	color: red;
 }
 </style>
 
@@ -34,16 +30,16 @@
 
 	</center>
 
-	<div id="successMessage">
+	<br />
+	<br />
 
-		<strong>${messageObj}</strong>
+	<div id="errorMessage">
 
-	</div>
-
-	<div id="emailFormDiv">
-
-		<a id="emailFormPage" href="emailForm">Go To Email Form Page</a>
+		<strong>Sorry, The Email Was Not Sent Because Of The
+			Following Error!</strong> <span id="exceptionTrace">${exception.message}</span>
 
 	</div>
 
 </body>
+
+</html>
